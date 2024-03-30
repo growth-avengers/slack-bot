@@ -1,7 +1,9 @@
+import os
 import requests
 from datetime import datetime
-from env import TIL_WEBHOOK_URL
 
+
+TIL_WEBHOOK_URL = os.environ.get('TIL_WEBHOOK_URL')
 
 def post_message(message):
     requests.post(TIL_WEBHOOK_URL, json={"text": message})

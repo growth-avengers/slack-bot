@@ -2,7 +2,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: "5 0 * * *"
+    - cron: "0 23 * * *"
   workflow_dispatch:
     inputs:
       logLevel:
@@ -26,6 +26,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install bs4 requests
-      - run: python til_notice.py
+      - run: python actions/til_notice.py
         env: # Or as an environment variable
-          SLACK_URL: ${{ secrets.SLACK_URL }}
+          TIL_WEBHOOK_URL: ${{ secrets.TIL_WEBHOOK_URL }}
