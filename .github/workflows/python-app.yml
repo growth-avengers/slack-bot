@@ -2,7 +2,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: "0 23 * * *"
+    - cron: "0 14 * * *"
   workflow_dispatch:
     inputs:
       logLevel:
